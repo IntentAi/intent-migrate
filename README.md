@@ -1,4 +1,4 @@
-# Intent Migration Toolkit
+# Intent Migration Toolkit - Phase 2 (dw abt it now)
 
 Tools for migrating Discord communities to [Intent](https://github.com/IntentAi/intent).
 
