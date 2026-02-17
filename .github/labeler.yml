@@ -1,0 +1,15 @@
+exporter:
+  - changed-files:
+      - any-glob-to-any-file: "server-import/exporter/**"
+
+importer:
+  - changed-files:
+      - any-glob-to-any-file: "server-import/importer/**"
+
+bridge:
+  - changed-files:
+      - any-glob-to-any-file: "bridge/**"
+
+message-import:
+  - changed-files:
+      - any-glob-to-any-file: "message-import/**"

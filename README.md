@@ -1,72 +1,23 @@
 # Intent Migration Toolkit
 
-Tools for migrating from Discord to Intent.
+Tools for migrating Discord communities to [Intent](https://github.com/IntentAi/intent).
 
-## Why Migration Matters
-
-Communities won't move without:
-1. Their server structure (channels, roles, permissions)
-2. Their bots
-3. A transition period where both platforms work
-
-This toolkit makes migration frictionless.
+> Not yet implemented — scaffolding only.
 
 ## Components
 
-### 1. Server Structure Import
-Export Discord server structure → Import to Intent
+| Tool | Purpose |
+|------|---------|
+| `server-import/exporter` | Discord bot that exports server structure |
+| `server-import/importer` | CLI that imports structure into Intent |
+| `bridge/` | Bidirectional message sync between Discord and Intent |
+| `message-import/` | Historical message import (DiscordChatExporter format) |
 
-**What gets migrated:**
-- Server name, icon, banner
-- Categories and channels (text, voice)
-- Roles with permission mappings
-- Webhooks
-- Emoji
-- Channel settings (topics, slowmode, NSFW)
+## Migration Layers
 
-### 2. Bridge Bot
-Run both platforms simultaneously during transition.
-
-**Features:**
-- Bidirectional message sync
-- Edit/delete propagation
-- Attachment forwarding
-- User avatar masquerading
-- Gradual migration support
-
-### 3. Message Import (Optional)
-Import historical messages from Discord.
-
-Uses DiscordChatExporter JSON format.
-
-## Structure
-
-```
-intent-migrate/
-├── server-import/
-│  ├── exporter/   # Discord bot (exports structure)
-│  └── importer/   # Intent CLI (imports structure)
-├── bridge/      # Bidirectional sync bot
-└── message-import/  # Historical message import
-```
-
-## Usage
-
-In development: Setup and usage guides
-
-## Migration Strategy
-
-### Layer 1: Webhook Compatibility (Easiest Win)
-Change webhook URL → existing integrations work
-
-### Layer 2: Server Structure Import (Removes Objection)
-Export → Import in 5 minutes
-
-### Layer 3: Bridge Bot (Enables Gradual Migration)
-Run both platforms, sync in real-time
-
-### Layer 4: Message Import (Optional)
-Preserve history if needed
+1. **Server structure import** — channels, roles, permissions, settings
+2. **Bridge bot** — real-time bidirectional sync during transition
+3. **Message import** — optional historical message preservation
 
 ## Contributing
 
@@ -74,4 +25,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 
-MIT License - See [LICENSE](LICENSE)
+MIT

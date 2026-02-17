@@ -1,29 +1,38 @@
 # Contributing to Intent Migration Toolkit
 
-Migration tool contributions welcome!
+This repo contains tools for migrating Discord communities to Intent. Nothing is implemented yet — just scaffolding.
 
-## What We Need
+## Pick an Issue
 
-**Server Import:**
-- Discord structure exporter bot
-- Intent importer CLI
-- Permission mapping logic
+Check the [issues](https://github.com/IntentAi/intent-migrate/issues). Look at **blocking relationships** on the right side — some work depends on other issues landing first. Comment to claim, wait for assignment.
 
-**Bridge Bot:**
-- Bidirectional message sync
-- Edit/delete propagation
-- Attachment handling
+## Branching
 
-**Message Import:**
-- DiscordChatExporter JSON parser
-- Bulk import to Intent
+Work is organized into phases. Check which phase branch is active or ask a maintainer.
+
+```
+git checkout <phase-branch> && git pull origin <phase-branch>
+git checkout -b <phase-branch>/1-exporter-bot
+```
+
+No active phase branch? Use `feat/<issue>-description` off `dev`. PR against the **phase branch**, not dev or main.
+
+## Commits
+
+Conventional commits, reference the issue, one logical change each.
+
+```
+feat(exporter): extract channel list from Discord API [refs #1]
+
+Uses discord.js to pull server structure including categories,
+text/voice channels, topics, and position ordering.
+```
 
 ## Tech Stack
 
-- TypeScript/JavaScript for Discord bots
-- Python or TypeScript for Intent tools
-- intent.js or discord.js as appropriate
+- TypeScript for Discord-side tools (discord.js)
+- TypeScript or Python for Intent-side tools (intent.js / intent.py)
 
 ## License
 
-MIT License
+MIT
